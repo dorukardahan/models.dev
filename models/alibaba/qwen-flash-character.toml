@@ -1,0 +1,25 @@
+# Model facts: 0G Compute catalog, https://router-api.0g.ai/v1/models (accessed 2026-11-22).
+# 0G lists the 8,192-token context and an open-ended (null) max_completion_tokens, so the output
+# limit is recorded as the context window.
+# Sampling: temperature, top_p and top_k are request parameters on Model Studio.
+schema = 2
+name = "Qwen Flash Character"
+description = "Qwen Flash variant tuned for short, in-character roleplay and companion dialogue"
+family = "qwen-flash"
+open_weights = false
+release_date = "2026-11-22"
+
+[modalities]
+input = ["text"]
+output = ["text"]
+
+[capabilities]
+tools = { supported = true }
+reasoning = { supported = true }
+temperature = true
+top_p = true
+top_k = true
+
+[limit]
+context = 8192
+output = 8192

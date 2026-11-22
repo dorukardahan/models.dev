@@ -1,0 +1,26 @@
+# Model facts: 0G Compute catalog, https://router-api.0g.ai/v1/models (accessed 2026-11-22), which
+# serves qwen3.5-omni-flash with text, audio, image and video input.
+# Input MIME types follow the Qwen3-Omni family files: https://www.alibabacloud.com/help/en/model-studio/vision
+# and https://www.alibabacloud.com/help/en/model-studio/qwen-omni (registered MIME types).
+# Sampling: temperature, top_p and top_k are request parameters on Model Studio.
+schema = 2
+name = "Qwen3.5 Omni Flash"
+description = "Qwen3.5 omni model accepting text, images, video, and audio with real-time-friendly latency"
+family = "qwen-omni"
+open_weights = false
+release_date = "2026-11-22"
+
+[modalities]
+input = ["text", "image/jpeg", "image/png", "image/webp", "video/mp4", "audio/wav", "audio/mpeg"]
+output = ["text"]
+
+[capabilities]
+tools = { supported = true }
+reasoning = { supported = true }
+temperature = true
+top_p = true
+top_k = true
+
+[limit]
+context = 196_608
+output = 8192

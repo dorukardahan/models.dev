@@ -1,0 +1,25 @@
+# Model facts: 0G Compute catalog, https://router-api.0g.ai/v1/models (accessed 2026-11-22).
+# 0G builds this model in-house; the catalog describes it as tuned for agentic coding and tool use
+# with thinking on by default, and lists text and image input with reasoning_effort support.
+schema = 2
+name = "0GM 1.0 35B A3B"
+description = "0G's in-house mixture-of-experts model tuned for agentic coding and tool use"
+family = "qwen"
+open_weights = true
+release_date = "2026-11-22"
+license = "Apache-2.0"
+
+[modalities]
+input = ["text", "image/jpeg", "image/png"]
+output = ["text"]
+
+[capabilities]
+tools = { supported = true }
+reasoning = { supported = true }
+temperature = true
+top_p = true
+top_k = true
+
+[limit]
+context = 262_144
+output = 32_768

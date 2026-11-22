@@ -1,0 +1,27 @@
+# Model facts: 0G Compute catalog, https://router-api.0g.ai/v1/models (accessed 2026-11-22).
+# 0G serves this id without a separate model card, so limits, modalities and release date are the
+# catalog values; the lab behind the id is named in the family and (when open) the weights link.
+# Sampling: the router lists temperature, top_p and top_k in supported_parameters.
+# FlashX serving tier of GLM-5.3 Flash; 0G lists text and image input.
+# Input formats stay at the documented GLM image types (jpg, jpeg, png) per https://docs.z.ai/api-reference/llm/chat-completion.
+schema = 2
+name = "GLM-5.3-FlashX"
+description = "GLM-5.3 Flash serving tier for faster multimodal coding and agent work"
+family = "glm-flash"
+open_weights = false
+release_date = "2026-11-22"
+
+[modalities]
+input = ["text", "image/jpeg", "image/png"]
+output = ["text"]
+
+[capabilities]
+tools = { supported = true }
+reasoning = { supported = true }
+temperature = true
+top_p = true
+top_k = true
+
+[limit]
+context = 1_000_000
+output = 131_072

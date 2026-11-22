@@ -1,0 +1,19 @@
+schema = 2
+base_model = "zerog/0gm-1.0-35b-a3b-sia"
+
+[modalities]
+input = ["text"]
+output = ["text"]
+
+[limit]
+context = 32_768
+output = 8192
+
+[cost.text.input]
+price = 0.536
+
+[cost.text.output]
+price = 3.216
+
+[capabilities]
+reasoning = { supported = true, default = { type = "effort", value = "medium" }, effort = ["low", "medium", "high", "max"] }

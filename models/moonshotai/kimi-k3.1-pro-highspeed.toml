@@ -1,0 +1,31 @@
+# Model facts: 0G Compute catalog, https://router-api.0g.ai/v1/models (accessed 2026-11-22).
+# 0G serves this id without a separate model card, so limits, modalities and release date are the
+# catalog values; the lab behind the id is named in the family and (when open) the weights link.
+# Sampling: the router lists temperature, top_p and top_k in supported_parameters.
+# HighSpeed serving of Kimi K3.1 Pro: same weights as https://huggingface.co/moonshotai/Kimi-K3.1-Pro.
+# Input formats follow models/moonshotai/kimi-k3.1-pro.toml.
+schema = 2
+name = "Kimi K3.1 Pro HighSpeed"
+description = "High-throughput serving of Kimi K3.1 Pro for coding and long-context agent work"
+family = "kimi-pro"
+open_weights = true
+release_date = "2026-11-22"
+
+[modalities]
+input = ["text", "image/jpeg", "image/png", "image/gif", "image/webp", "video/mp4"]
+output = ["text"]
+
+[capabilities]
+tools = { supported = true }
+reasoning = { supported = true }
+temperature = false
+top_p = false
+top_k = false
+
+[limit]
+context = 1_000_000
+output = 1_000_000
+
+[[weights]]
+label = "Hugging Face"
+url = "https://huggingface.co/moonshotai/Kimi-K3.1-Pro"

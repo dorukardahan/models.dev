@@ -1,0 +1,25 @@
+# Model facts: 0G Compute catalog, https://router-api.0g.ai/v1/models (accessed 2026-11-22).
+# SIA variant of 0GM 1.0, guided by a per-token reward model during decoding; the catalog lists
+# text-only input, a 32,768-token context and no tools support.
+schema = 2
+name = "0GM 1.0 35B A3B SIA"
+description = "0GM 1.0 variant with per-token reward guidance for more careful decoding"
+family = "qwen"
+open_weights = true
+release_date = "2026-11-22"
+license = "Apache-2.0"
+
+[modalities]
+input = ["text"]
+output = ["text"]
+
+[capabilities]
+tools = { supported = false }
+reasoning = { supported = true }
+temperature = true
+top_p = true
+top_k = true
+
+[limit]
+context = 32_768
+output = 8192

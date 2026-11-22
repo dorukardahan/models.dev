@@ -1,0 +1,24 @@
+# Model facts: 0G Compute catalog, https://router-api.0g.ai/v1/models (accessed 2026-11-22).
+# ERNIE 5.5 Flash is a preview on Baidu and 0G serves it text-only. Sampling and tool flags follow
+# the other ERNIE lab files on models.dev.
+schema = 2
+name = "ERNIE 5.5 Flash Preview"
+description = "Preview of Baidu ERNIE 5.5 Flash, a fast tier for reasoning and tool use"
+family = "ernie"
+open_weights = false
+release_date = "2026-11-22"
+
+[modalities]
+input = ["text"]
+output = ["text"]
+
+[capabilities]
+tools = { supported = true }
+reasoning = { supported = true }
+temperature = true
+top_p = true
+top_k = true
+
+[limit]
+context = 262_144
+output = 131_072

@@ -1,0 +1,25 @@
+# Model facts: 0G Compute catalog, https://router-api.0g.ai/v1/models (accessed 2026-11-22).
+# The id ships as a chat model that takes page images and returns text; 0G lists no tools support.
+# Family: Qwen VL OCR tier (no dedicated ocr family in packages/core/src/family.ts).
+# Sampling: temperature, top_p and top_k are request parameters on Model Studio.
+schema = 2
+name = "Unlimited-OCR"
+description = "Qwen OCR model for long documents, taking page images and returning structured text"
+family = "qwen-vl"
+open_weights = true
+release_date = "2026-11-22"
+
+[modalities]
+input = ["text", "image/jpeg", "image/png"]
+output = ["text"]
+
+[capabilities]
+tools = { supported = false }
+reasoning = { supported = true }
+temperature = true
+top_p = true
+top_k = true
+
+[limit]
+context = 32_768
+output = 8192
